@@ -1,7 +1,7 @@
 {
   "name": "geovisor",
   "version": "0.0.0",
-  "homepage": "https://jchafloquem.github.io/geoInversion360",
+  
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
