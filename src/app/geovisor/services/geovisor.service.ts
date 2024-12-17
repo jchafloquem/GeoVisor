@@ -35,13 +35,12 @@ export class GeovisorSharedService {
 		}
 	}
 	//*Servicio de delitos fuente INEI
-	public layerUrlsmtc = {
-		baseServicio: 'https://services8.arcgis.com/tPY1NaqA2ETpJ86A/arcgis/rest/services/INTERFERENCIAS_PMD/FeatureServer',
-		interferencias: {
-			pmd_limAmpliado: '3',
-			pmd_actual: '1',
-			pmd_amppliaciones: '2',
-			pmd_interferencias: '0'
+	public layerUrldevida = {
+		baseServicio: 'https://services8.arcgis.com/tPY1NaqA2ETpJ86A/arcgis/rest/services/ZONAS/FeatureServer',
+		monitoreo: {
+			segundoEnvio: '3',
+			oficinaZonales:'4',
+
 
 		}
 	};
@@ -77,46 +76,27 @@ export class GeovisorSharedService {
 			labelsVisible: false,
 			group: 'LIMITES POLITICOS',
 		},
+	//*Capas Cacao y Cafe
+	{
+		title: 'OFICINAS ZONALES',
+		url: `${this.layerUrldevida.baseServicio}/${this.layerUrldevida.monitoreo.oficinaZonales}`,
+		labelingInfo: undefined,
+		popupTemplate: undefined,
+		renderer: undefined,
+		visible: false,
+		group: 'AMBITOS',
+	},
 		{
-			title: 'PDMs ACTUAL',
-			url: `${this.layerUrlsmtc.baseServicio}/${this.layerUrlsmtc.interferencias.pmd_actual}`,
+			title: 'CULTIVOS CAFE Y CACAO',
+			url: `${this.layerUrldevida.baseServicio}/${this.layerUrldevida.monitoreo.segundoEnvio}`,
 			labelingInfo: undefined,
 			popupTemplate: undefined,
 			renderer: undefined,
-			visible: true,
-			labelsVisible: false,
-			group: 'INTERFERENCIAS',
+			visible: false,
+			group: 'SEGUNDO ENVIO',
 		},
-		{
-			title: 'PDMs AMPLIACIONES',
-			url: `${this.layerUrlsmtc.baseServicio}/${this.layerUrlsmtc.interferencias.pmd_amppliaciones}`,
-			labelingInfo: undefined,
-			popupTemplate: undefined,
-			renderer: undefined,
-			visible: true,
-			labelsVisible: false,
-			group: 'INTERFERENCIAS',
-		},
-		{
-			title: 'PDMs LIMITE AMPLIADO',
-			url: `${this.layerUrlsmtc.baseServicio}/${this.layerUrlsmtc.interferencias.pmd_limAmpliado}`,
-			labelingInfo: undefined,
-			popupTemplate: undefined,
-			renderer: undefined,
-			visible: true,
-			labelsVisible: false,
-			group: 'INTERFERENCIAS',
-		},
-		{
-			title: 'PDMs INTERFERENCIAS',
-			url: `${this.layerUrlsmtc.baseServicio}/${this.layerUrlsmtc.interferencias.pmd_interferencias}`,
-			labelingInfo: undefined,
-			popupTemplate: undefined,
-			renderer: undefined,
-			visible: true,
-			labelsVisible: false,
-			group: 'INTERFERENCIAS',
-		},
+
+
 	];
 
 	public lis: [] = [];

@@ -43,7 +43,7 @@ export const routes: Routes = [
 	},
 	{
 		path: '',
-		redirectTo: 'geovisor',
+		redirectTo: 'auth',
 		pathMatch: 'full',
 	},
 	{
